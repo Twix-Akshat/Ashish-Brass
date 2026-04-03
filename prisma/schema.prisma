@@ -1,0 +1,125 @@
+// Prisma schema for Ashish Brass
+// Database: PostgreSQL (Neon serverless)
+// Prisma version: 7.x
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ---------------------------------------------------------------------------
+// Products
+// ---------------------------------------------------------------------------
+
+model Product {
+  id             String   @id @default(cuid())
+  slug           String   @unique
+  name           String
+  imageUrl       String?
+  isFeatured     Boolean  @default(false)
+  viewDetailsHref String  @default("#contact")
+  tags           String[] // e.g. ["Bestseller", "Export Ready"]
+  specs          String[] // e.g. ["Material: CW617N Brass", "Sizes: 1/8\" – 2\""]
+  sortOrder      Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([isFeatured])
+  @@index([sortOrder])
+}
+
+// ---------------------------------------------------------------------------
+// Industries
+// ---------------------------------------------------------------------------
+
+model Industry {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  icon        String   // Lucide icon name, e.g. "Droplets"
+  name        String
+  description String
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([sortOrder])
+}
+
+// ---------------------------------------------------------------------------
+// Quote requests (submitted via the CTA / contact form)
+// ---------------------------------------------------------------------------
+
+model QuoteRequest {
+  id          String            @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  message     String
+  productRef  String?           // free-text product name or slug the buyer is interested in
+  status      QuoteStatus       @default(PENDING)
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum QuoteStatus {
+  PENDING
+  REVIEWED
+  QUOTED
+  CLOSED
+}
+
+// ---------------------------------------------------------------------------
+// Site configuration (single-row table for editable homepage copy)
+// ---------------------------------------------------------------------------
+
+model SiteConfig {
+  id               String   @id @default(cuid())
+
+  // Hero
+  heroHeadline     String
+  heroSubheadline  String
+  heroDescription  String
+  heroPrimaryCtaLabel   String @default("Request a Quote")
+  heroPrimaryCtaHref    String @default("#contact")
+  heroSecondaryCtaLabel String @default("View Products")
+  heroSecondaryCtaHref  String @default("#products")
+
+  // CTA section
+  ctaHeadline      String
+  ctaDescription   String
+  ctaButtonLabel   String
+  ctaButtonHref    String
+  ctaContactDetail String
+
+  // Footer
+  companyName      String
+  tagline          String
+  address          String
+  phone            String
+  email            String
+  businessHours    String
+
+  updatedAt        DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Stats (displayed in the Hero)
+// ---------------------------------------------------------------------------
+
+model Stat {
+  id        String   @id @default(cuid())
+  value     String   // e.g. "25+"
+  label     String   // e.g. "Years of Experience"
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sortOrder])
+}
