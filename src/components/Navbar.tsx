@@ -37,7 +37,7 @@ export default function Navbar() {
       >
         {/* Brand */}
         <a
-          href="#"
+          href="/"
           className={`text-xl font-bold tracking-tight transition-colors ${
             scrolled ? 'text-amber-700' : 'text-white'
           }`}
@@ -71,12 +71,6 @@ export default function Navbar() {
           >
             <Phone size={14} />
             {contactPhone}
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full bg-amber-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2"
-          >
-            Get a Quote
           </a>
         </div>
 
@@ -119,13 +113,6 @@ export default function Navbar() {
             >
               <Phone size={14} />
               {contactPhone}
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setMenuOpen(false)}
-              className="rounded-full bg-amber-600 px-5 py-2 text-center text-sm font-semibold text-white hover:bg-amber-700"
-            >
-              Get a Quote
             </a>
           </div>
         </div>

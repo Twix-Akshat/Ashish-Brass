@@ -3,6 +3,8 @@ import { productsData } from '@/data/products';
 import ProductCard from './ProductCard';
 
 export default function ProductsSection() {
+  const featuredProducts = productsData.products.slice(0, 3);
+
   return (
     <section id="products" className="bg-neutral-50 py-20" aria-label="Products">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -14,9 +16,9 @@ export default function ProductsSection() {
           <p className="mt-3 text-lg text-neutral-500">{productsData.subtitle}</p>
         </div>
 
-        {/* Grid */}
+        {/* Grid - Show only 3 products */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {productsData.products.map((product) => (
+          {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
@@ -24,7 +26,7 @@ export default function ProductsSection() {
         {/* View all */}
         <div className="mt-10 text-center">
           <a
-            href={productsData.viewAllLink.href}
+            href="/products"
             className="inline-flex items-center gap-1.5 rounded-full border border-amber-600 px-6 py-2.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
           >
             {productsData.viewAllLink.label}

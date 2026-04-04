@@ -1,22 +1,22 @@
 import { FooterData } from './types';
 
 export const footerData: FooterData = {
-  companyName: 'Ashish Brass',
-  tagline: 'Precision Brass Components, Engineered for the World',
-  address: 'GIDC Sakar-2, Jamnagar – 361 004, Gujarat, India',
-  phone: '+91 98765 43210',
-  email: 'sales@ashishbrass.com',
+  companyName: 'Ashish Brass Industries',
+  tagline: 'Premium Brass Components for Global Industries',
+  address: 'C-305, Opp. Police Chawki, Shankar Tekri, Jamnagar – 361004, Gujarat, India',
+  phone: '+91-9328101335 / +91-8320897541',
+  email: 'kdp1971@gmail.com',
   businessHours: 'Mon – Sat: 9:00 AM – 6:00 PM IST',
   linkColumns: [
     {
       heading: 'Products',
       links: [
-        { label: 'Brass Fittings', href: '#products' },
-        { label: 'Ball Valves', href: '#products' },
-        { label: 'Threaded Inserts', href: '#products' },
-        { label: 'Push-Fit Connectors', href: '#products' },
-        { label: 'Electrical Terminals', href: '#products' },
-        { label: 'CNC Turned Parts', href: '#products' },
+        { label: 'Brass Battery Terminals', href: '#products' },
+        { label: 'Brass Auto Parts', href: '#products' },
+        { label: 'Cable Lugs', href: '#products' },
+        { label: 'Brass Inserts', href: '#products' },
+        { label: 'Electrical Parts', href: '#products' },
+        { label: 'Mixer Parts', href: '#products' },
       ],
     },
     {
@@ -31,9 +31,9 @@ export const footerData: FooterData = {
     {
       heading: 'Contact',
       links: [
-        { label: 'Get a Quote', href: '#contact' },
-        { label: 'Technical Support', href: '#contact' },
-        { label: 'Careers', href: '#contact' },
+        { label: 'View Products', href: '/products' },
+        { label: 'Browse All', href: '#industries' },
+        { label: 'Contact Us', href: '#contact' },
       ],
     },
   ],

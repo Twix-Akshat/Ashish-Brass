@@ -123,3 +123,13 @@ model Stat {
 
   @@index([sortOrder])
 }
+model Inquiry {
+  id        String   @id @default(cuid())
+
+  name      String
+  email     String
+  phone     String?
+  message   String
+
+  createdAt DateTime @default(now())
+}

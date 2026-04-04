@@ -1,10 +1,10 @@
 import { CtaData } from './types';
 
 export const ctaData: CtaData = {
-  headline: 'Ready to Source Quality Brass Components?',
+  headline: 'Ready to Source Premium Brass Components?',
   description:
-    'Get a competitive quote within 24 hours. Our engineering team is ready to review your drawings and specifications.',
-  buttonLabel: 'Get a Free Quote',
+    'Contact us today for competitive quotes and expert guidance. Our team is ready to discuss your brass component requirements and delivery timelines.',
+  buttonLabel: 'Request a Quote',
   buttonHref: '#contact',
-  contactDetail: 'Or call us: +91 98765 43210',
+  contactDetail: 'Call us: +91-9328101335 or Email: kdp1971@gmail.com',
 };

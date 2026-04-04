@@ -2,27 +2,27 @@ import { Feature } from './types';
 
 export const features: Feature[] = [
   {
-    icon: 'Zap',
-    title: 'Precision Manufacturing',
-    description:
-      'CNC-machined brass components with tolerances as tight as ±0.01mm, ensuring consistent quality across high-volume production runs.',
-  },
-  {
-    icon: 'Globe',
-    title: 'Global Export',
-    description:
-      'Supplying brass parts to clients across 50+ countries with reliable logistics, export documentation, and on-time delivery.',
-  },
-  {
     icon: 'Shield',
-    title: 'ISO Certified Quality',
+    title: 'Quality Assurance',
     description:
-      'ISO 9001:2015 certified processes with rigorous in-line inspection and full traceability from raw material to finished component.',
+      'With extensively used brass materials and top-notch quality raw materials, all products undergo rigorous assurance tests from scratch. We provide the ultimate level of quality at reasonable prices.',
+  },
+  {
+    icon: 'Zap',
+    title: 'Manufacturing Infrastructure',
+    description:
+      'Refined production facilities with advanced machinery in Jamnagar, a brass manufacturing hub. Our extremely qualified and knowledgeable team operates equipment approved to international quality norms.',
+  },
+  {
+    icon: 'Users',
+    title: 'Client-Centric Approach',
+    description:
+      'Millions of people use our metal products daily. We have built a reputable business with a client central approach, serving well-known organizations across the globe.',
   },
   {
     icon: 'Award',
-    title: 'Custom Solutions',
+    title: 'Custom Engineered Solutions',
     description:
-      'From prototype to production, we engineer bespoke brass components to your exact drawings, specifications, and alloy requirements.',
+      'We have the flexibility to produce every brass product part. From design to delivery, we engineer bespoke solutions to your exact specifications and requirements.',
   },
 ];

@@ -41,19 +41,16 @@ export default function Hero() {
             <p className="mb-8 max-w-xl text-lg leading-relaxed text-neutral-300">
               {heroData.description}
             </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex flex-col gap-4 max-w-xl">
               <a
                 href={heroData.primaryCta.href}
                 className="rounded-full bg-amber-600 px-7 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
               >
                 {heroData.primaryCta.label}
               </a>
-              <a
-                href={heroData.secondaryCta.href}
-                className="rounded-full border border-white/30 px-7 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900"
-              >
-                {heroData.secondaryCta.label}
-              </a>
+              <p className="text-sm text-neutral-400 text-center">
+                ✓ ISO Certified Quality | ✓ 50+ Countries | ✓ Expert Support
+              </p>
             </div>
           </motion.div>
 
