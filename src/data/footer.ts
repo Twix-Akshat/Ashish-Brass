@@ -5,7 +5,7 @@ export const footerData: FooterData = {
   tagline: 'Premium Brass Components for Global Industries',
   address: 'C-305, Opp. Police Chawki, Shankar Tekri, Jamnagar – 361004, Gujarat, India',
   phone: '+91-9328101335 / +91-8320897541',
-  email: 'kdp1971@gmail.com',
+  email: 'ashishbrassind@gmail.com',
 
   linkColumns: [
     {
@@ -15,8 +15,6 @@ export const footerData: FooterData = {
         { label: 'Brass Auto Parts', href: '/#products' },
         { label: 'Cable Lugs', href: '/#products' },
         { label: 'Brass Inserts', href: '/#products' },
-        { label: 'Electrical Parts', href: '/#products' },
-        { label: 'Mixer Parts', href: '/#products' },
       ],
     },
     {

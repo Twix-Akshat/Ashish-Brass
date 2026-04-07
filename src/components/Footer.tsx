@@ -16,18 +16,19 @@ export default function Footer() {
                 <MapPin size={13} className="mt-0.5 shrink-0 text-[#b8a24f]" aria-hidden="true" />
                 {footerData.address}
               </span>
-              <a href={`tel:${footerData.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-[#e6d9bf] transition-colors">
-                <Phone size={13} className="shrink-0 text-[#b8a24f]" aria-hidden="true" />
-                {footerData.phone}
-              </a>
+              {footerData.phone.split('/').map((phoneStr, index) => {
+                const number = phoneStr.trim();
+                return (
+                  <a key={index} href={`tel:${number.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-[#e6d9bf] transition-colors">
+                    <Phone size={13} className="shrink-0 text-[#b8a24f]" aria-hidden="true" />
+                    {number}
+                  </a>
+                );
+              })}
               <a href={`mailto:${footerData.email}`} className="flex items-center gap-2 hover:text-[#e6d9bf] transition-colors">
                 <Mail size={13} className="shrink-0 text-[#b8a24f]" aria-hidden="true" />
                 {footerData.email}
               </a>
-              <span className="flex items-center gap-2">
-                <Clock size={13} className="shrink-0 text-[#b8a24f]" aria-hidden="true" />
-                {footerData.businessHours}
-              </span>
             </address>
           </div>
 
