@@ -3,34 +3,37 @@ import { productsData } from '@/data/products';
 import ProductCard from './ProductCard';
 
 export default function ProductsSection() {
-  const featuredProducts = productsData.products.slice(0, 3);
+  const featuredIds = ['ri-10011', 'angle-900', 'tvs-type'];
+  const featuredProducts = featuredIds.flatMap(id => {
+    const p = productsData.products.find(prod => prod.id === id);
+    return p ? [p] : [];
+  });
 
   return (
-    <section id="products" className="bg-neutral-50 py-20" aria-label="Products">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="products" className="bg-[#e6d9bf] py-14" aria-label="Products">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* Header */}
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl">
+        <div className="mb-8 text-center">
+          <h2 className="text-2xl font-bold tracking-tight text-[#2e3d3b] sm:text-3xl">
             {productsData.sectionTitle}
           </h2>
-          <p className="mt-3 text-lg text-neutral-500">{productsData.subtitle}</p>
+          <p className="mt-2 text-sm text-[#b8a24f] sm:text-base">{productsData.subtitle}</p>
         </div>
 
-        {/* Grid - Show only 3 products */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* Grid — 1 col mobile, 2 col sm, 3 col lg */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* View all */}
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center">
           <a
-            href="/products"
-            className="inline-flex items-center gap-1.5 rounded-full border border-amber-600 px-6 py-2.5 text-sm font-semibold text-amber-700 transition-colors hover:bg-amber-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+            href={productsData.viewAllLink.href}
+            className="inline-flex items-center gap-1.5 rounded-xl border border-[#b8a24f] px-5 py-2.5 text-sm font-semibold text-[#b8a24f] transition-colors hover:bg-[#b8a24f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b8a24f]"
           >
             {productsData.viewAllLink.label}
-            <ArrowRight size={15} aria-hidden="true" />
+            <ArrowRight size={14} aria-hidden="true" />
           </a>
         </div>
       </div>

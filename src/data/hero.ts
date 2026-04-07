@@ -16,7 +16,7 @@ export const heroData = {
   stats: [
     { value: "2018", label: "Established" },
     { value: "100%", label: "Quality Assured" },
-    { value: "50+", label: "Countries Served" },
-    { value: "Export", label: "Ready" },
+    { value: "3+", label: "Product Lines" },
+    { value: "Custom", label: "Designed" },
   ] as Stat[],
 };

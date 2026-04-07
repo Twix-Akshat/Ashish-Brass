@@ -4,10 +4,18 @@ import { useEffect, useRef, useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { navLinks, contactPhone } from '@/data/nav';
 
-export default function Navbar() {
+/**
+ * variant="transparent" — used on hero pages (homepage).
+ *   Starts transparent over dark hero, becomes solid on scroll.
+ * variant="solid" — used on inner pages with light backgrounds.
+ *   Always solid [#2e3d3b] so text is always visible.
+ */
+export default function Navbar({ variant = 'transparent' }: { variant?: 'transparent' | 'solid' }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const isSolid = variant === 'solid' || scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 0);
@@ -28,32 +36,25 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isSolid ? 'bg-[#2e3d3b] shadow-lg' : 'bg-transparent'
       }`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6"
         aria-label="Main navigation"
       >
         {/* Brand */}
-        <a
-          href="/"
-          className={`text-xl font-bold tracking-tight transition-colors ${
-            scrolled ? 'text-amber-700' : 'text-white'
-          }`}
-        >
+        <a href="/" className="text-lg font-bold tracking-tight text-white">
           Ashish Brass
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-amber-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded ${
-                  scrolled ? 'text-neutral-700' : 'text-white'
-                }`}
+                className="text-sm font-medium text-[#e6d9bf] hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e6d9bf] rounded"
               >
                 {link.label}
               </a>
@@ -61,58 +62,58 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop right side */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Desktop phone */}
+        <a
+          href={`tel:${contactPhone.replace(/\s/g, '')}`}
+          className="hidden md:flex items-center gap-1.5 text-sm font-medium text-[#e6d9bf] hover:text-white transition-colors"
+        >
+          <Phone size={14} />
+          {contactPhone}
+        </a>
+
+        {/* Mobile: phone icon + hamburger */}
+        <div className="flex items-center gap-2 md:hidden">
           <a
             href={`tel:${contactPhone.replace(/\s/g, '')}`}
-            className={`flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-amber-600 ${
-              scrolled ? 'text-neutral-600' : 'text-white'
-            }`}
+            aria-label="Call us"
+            className="rounded-full p-2 text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e6d9bf]"
           >
-            <Phone size={14} />
-            {contactPhone}
+            <Phone size={18} />
           </a>
+          <button
+            className="rounded-full p-2 text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e6d9bf]"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+          >
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-
-        {/* Hamburger */}
-        <button
-          className={`md:hidden rounded p-1.5 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
-            scrolled ? 'text-neutral-700' : 'text-white'
-          }`}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
-        >
-          {menuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
       </nav>
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div
-          ref={menuRef}
-          className="md:hidden bg-white border-t border-neutral-100 shadow-lg"
-        >
-          <ul className="flex flex-col px-4 py-3 gap-1">
+        <div ref={menuRef} className="md:hidden bg-[#2e3d3b] border-t border-[#2e3d3b]">
+          <ul className="flex flex-col px-4 py-2">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded px-3 py-2 text-sm font-medium text-neutral-700 hover:bg-amber-50 hover:text-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                  className="block rounded-lg px-3 py-3 text-base font-medium text-[#e6d9bf] hover:bg-[#2e3d3b] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e6d9bf]"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="border-t border-neutral-100 px-4 py-3 flex flex-col gap-2">
+          <div className="px-4 pb-4">
             <a
-              href={`tel:${contactPhone.replace(/\s/g, '')}`}
-              className="flex items-center gap-1.5 text-sm text-neutral-600"
+              href="#contact"
+              onClick={() => setMenuOpen(false)}
+              className="block w-full rounded-xl bg-[#b8a24f] py-3 text-center text-sm font-semibold text-white hover:bg-[#a66a3a] transition-colors"
             >
-              <Phone size={14} />
-              {contactPhone}
+              Get a Quote
             </a>
           </div>
         </div>

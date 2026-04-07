@@ -10,25 +10,24 @@ import {
 import { trustBadges } from '@/data/trust';
 
 const iconMap: Record<string, LucideIcon> = {
-  BadgeCheck,
-  Globe,
-  Factory,
-  Microscope,
-  Truck,
-  Leaf,
+  BadgeCheck, Globe, Factory, Microscope, Truck, Leaf,
 };
 
 export default function TrustBar() {
   return (
-    <section className="border-y border-neutral-100 bg-neutral-50 py-8" aria-label="Trust and certifications">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8">
+    <section className="bg-[#e6d9bf] py-6" aria-label="Trust and certifications">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Scrollable row on mobile, wrapping on larger */}
+        <div className="flex gap-4 overflow-x-auto pb-1 sm:flex-wrap sm:justify-center sm:overflow-visible sm:pb-0">
           {trustBadges.map((badge) => {
             const Icon = iconMap[badge.icon] ?? BadgeCheck;
             return (
-              <div key={badge.label} className="flex items-center gap-2">
-                <Icon size={18} className="shrink-0 text-amber-600" aria-hidden="true" />
-                <span className="text-sm font-medium text-neutral-700">{badge.label}</span>
+              <div
+                key={badge.label}
+                className="flex shrink-0 items-center gap-2 rounded-full border border-[#7d8c8a]/40 bg-white px-3.5 py-2"
+              >
+                <Icon size={15} className="text-[#b8a24f]" aria-hidden="true" />
+                <span className="whitespace-nowrap text-xs font-medium text-[#2e3d3b]">{badge.label}</span>
               </div>
             );
           })}

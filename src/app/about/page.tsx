@@ -1,5 +1,3 @@
-'use client';
-
 import { Award, Zap, Users, Shield } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -8,182 +6,150 @@ import Footer from '@/components/Footer';
 export default function AboutPage() {
   return (
     <>
-      <Navbar />
-      <main className="min-h-screen bg-white pt-20">
-        <section className="bg-gradient-to-br from-amber-50 to-neutral-50 py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-neutral-900">
-              About Ashish Brass Industries
-            </h1>
-            <p className="mt-6 text-xl text-neutral-600 max-w-3xl mx-auto">
-              Leading global supplier of premium brass components, engineered for performance and reliability.
-            </p>
-          </div>
+      <Navbar variant="solid" />
+      <main className="min-h-screen bg-[#e6d9bf]">
+
+        {/* Page hero */}
+        <section className="bg-[#2e3d3b] px-4 pb-16 pt-32 text-center sm:px-6 sm:pb-20 sm:pt-36">
+          <span className="mb-3 inline-block rounded-full bg-[#b8a24f]/50 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-[#e6d9bf]">
+            Who We Are
+          </span>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            About Ashish Brass Industries
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-[#7d8c8a] sm:text-lg">
+            Leading global supplier of premium brass components, engineered for performance and reliability.
+          </p>
         </section>
 
-        {/* Main Content */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        {/* About Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <div>
-            <h2 className="text-3xl font-bold text-neutral-900 mb-6">About Our Organization</h2>
-            <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
-              <p>
-                Ashish Brass Industries is experiencing growth at an accelerated pace since its inception in the year 2018. The profound knowledge and rich experience of the Proprietor in arena of Brass Products has assisted the company to enjoy healthy competition as one of the prominent Brass Metal Products Manufacturers and Suppliers in India.
-              </p>
-              <p>
-                The company specializes in the dealing of Brass Mixer Parts, Brass Inserts, Brass Fasteners, Brass Nuts & Bolts, Brass Cable Glands, Brass Electrical Parts, Brass Auto Parts, Brass GAS Parts, and Brass Cable Lugs.
-              </p>
-            </div>
-          </div>
-          <div className="bg-amber-50 rounded-2xl p-8 border border-amber-200">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-4">Company Info</h3>
-            <div className="space-y-4 text-neutral-700">
-              <div>
-                <p className="font-semibold">Company Name</p>
-                <p className="text-neutral-600">Ashish Brass Industries</p>
-              </div>
-              <div>
-                <p className="font-semibold">Type of Organisation</p>
-                <p className="text-neutral-600">Proprietorship</p>
-              </div>
-              <div>
-                <p className="font-semibold">Proprietor</p>
-                <p className="text-neutral-600">Mr. Kaushal Patel</p>
-              </div>
-              <div>
-                <p className="font-semibold">Established</p>
-                <p className="text-neutral-600">2018</p>
-              </div>
-              <div>
-                <p className="font-semibold">Headquarters</p>
-                <p className="text-neutral-600">Jamnagar, Gujarat, India</p>
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+
+          {/* About + Company Info */}
+          <div className="mb-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="rounded-2xl bg-white p-6 shadow-sm border border-[#e6d9bf]/40">
+              <h2 className="mb-4 text-xl font-bold text-[#2e3d3b]">About Our Organisation</h2>
+              <div className="space-y-3 text-sm leading-relaxed text-[#b8a24f]">
+                <p>
+                  Ashish Brass Industries is experiencing growth at an accelerated pace since its inception in 2018. The profound knowledge and rich experience of the Proprietor in the arena of Brass Products has assisted the company to enjoy healthy competition as one of the prominent Brass Metal Products Manufacturers and Suppliers in India.
+                </p>
+                <p>
+                  The company specialises in Brass Mixer Parts, Brass Inserts, Brass Fasteners, Brass Nuts &amp; Bolts, Brass Cable Glands, Brass Electrical Parts, Brass Auto Parts, Brass GAS Parts, and Brass Cable Lugs.
+                </p>
               </div>
             </div>
-          </div>
-        </div>
 
-        {/* Our Story */}
-        <section className="mb-20 bg-neutral-50 rounded-2xl p-12 border border-neutral-200">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-6">Our Story</h2>
-          <div className="space-y-4 text-neutral-700 text-lg leading-relaxed">
-            <p>
-              Ashish Brass was established in 2018 and gained immense success under the leadership of Proprietor Kaushal Patel. Though sustaining in the Brass Metal Product industry is not easy, he set the example by making the company the best and most distinguished Brass Metal Product Makers and Suppliers.
-            </p>
-            <p>
-              With extensive experience in the field of Brass metal, we hold strong on excellent product quality, customer services, compliance, commitment, and affordable rate structure. We have been engaged in bringing top-grade brass metal products since 2018.
-            </p>
-            <p>
-              The offered products are manufactured under the best crew of professionals using top-notch quality assured brass material. We are leaders in our brass metal manufacturing field and are involved in making an extensive range of brass metal products. We have the flexibility to produce every brass product part.
-            </p>
+            <div className="rounded-2xl border border-[#e6d9bf]/60 bg-[#e6d9bf]/10 p-6">
+              <h3 className="mb-4 text-lg font-bold text-[#2e3d3b]">Company Info</h3>
+              <dl className="space-y-3 text-sm">
+                {[
+                  ['Company Name', 'Ashish Brass Industries'],
+                  ['Type of Organisation', 'Proprietorship'],
+                  ['Proprietor', 'Mr. Kaushal Patel'],
+                  ['Established', '2018'],
+                  ['Headquarters', 'Jamnagar, Gujarat, India'],
+                ].map(([label, value]) => (
+                  <div key={label} className="flex flex-col gap-0.5">
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-[#b8a24f]">{label}</dt>
+                    <dd className="font-medium text-[#2e3d3b]">{value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
-        </section>
 
-        {/* Vision */}
-        <section className="mb-20">
-          <div className="bg-gradient-to-r from-amber-600 to-amber-700 rounded-2xl p-12 text-white text-center">
-            <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
-            <p className="text-lg leading-relaxed max-w-3xl mx-auto">
+          {/* Our Story */}
+          <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm border border-[#e6d9bf]/40">
+            <h2 className="mb-4 text-xl font-bold text-[#2e3d3b]">Our Story</h2>
+            <div className="space-y-3 text-sm leading-relaxed text-[#b8a24f]">
+              <p>
+                Ashish Brass was established in 2018 and gained immense success under the leadership of Proprietor Kaushal Patel. Though sustaining in the Brass Metal Product industry is not easy, he set the example by making the company the best and most distinguished Brass Metal Product Makers and Suppliers.
+              </p>
+              <p>
+                With extensive experience in the field of Brass metal, we hold strong on excellent product quality, customer services, compliance, commitment, and affordable rate structure. We have been engaged in bringing top-grade brass metal products since 2018.
+              </p>
+              <p>
+                The offered products are manufactured under the best crew of professionals using top-notch quality assured brass material. We have the flexibility to produce every brass product part.
+              </p>
+            </div>
+          </section>
+
+          {/* Vision */}
+          <section className="mb-10 rounded-2xl bg-[#2e3d3b] p-8 text-center">
+            <h2 className="mb-3 text-xl font-bold text-white">Our Vision</h2>
+            <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[#7d8c8a] sm:text-base">
               "To achieve profitable growth as the premier global supplier, offering innovative value-added services to our customers with competitive advantages."
             </p>
-          </div>
-        </section>
+          </section>
 
-        {/* Manufacturing Strengths */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">Manufacturing Strengths</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Quality Assurance */}
-            <div className="rounded-2xl border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="text-amber-600" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">Quality Assurance</h3>
-              <p className="text-neutral-700 leading-relaxed">
-                With extensively used brass materials and top-notch quality raw materials, all products undergo rigorous assurance tests from scratch. We provide the ultimate level of quality at reasonable prices.
-              </p>
+          {/* Manufacturing Strengths */}
+          <section className="mb-10">
+            <h2 className="mb-6 text-center text-xl font-bold text-[#2e3d3b]">Manufacturing Strengths</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                { icon: Shield, title: 'Quality Assurance', body: 'All products undergo rigorous assurance tests using top-notch quality raw materials. We provide the ultimate level of quality at reasonable prices.' },
+                { icon: Zap, title: 'Manufacturing Infrastructure', body: 'Refined producing facilities with the best infrastructure in Jamnagar. Our team operates advanced machinery approved by international quality norms.' },
+                { icon: Users, title: 'Client-Centric Approach', body: 'We have built a reputable business with a client-central approach, serving well-known organisations across the globe.' },
+              ].map(({ icon: Icon, title, body }) => (
+                <div key={title} className="rounded-2xl border border-[#e6d9bf]/50 bg-white p-5 transition-shadow hover:shadow-md">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#e6d9bf]/30 text-[#b8a24f]">
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="mb-2 text-sm font-bold text-[#2e3d3b]">{title}</h3>
+                  <p className="text-xs leading-relaxed text-[#b8a24f]">{body}</p>
+                </div>
+              ))}
             </div>
+          </section>
 
-            {/* Manufacturing Infrastructure */}
-            <div className="rounded-2xl border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="text-amber-600" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">Manufacturing Infrastructure</h3>
-              <p className="text-neutral-700 leading-relaxed">
-                We have refined producing facilities with the best infrastructure established in Jamnagar. Our extremely qualified and knowledgeable team operates advanced machinery approved by international quality norms.
-              </p>
+          {/* Major Business Areas */}
+          <section className="mb-10">
+            <h2 className="mb-6 text-xl font-bold text-[#2e3d3b]">Major Business Areas</h2>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                ['Brass Battery Terminals', 'Custom designed, corrosion-free battery terminals in various sizes and configurations.'],
+                ['Brass Auto Parts', 'Precision engineered automotive components for OEM and aftermarket applications.'],
+                ['Cable Lugs', 'Brass and copper cable lugs for electrical and automotive applications.'],
+              ].map(([title, desc]) => (
+                <div key={title} className="rounded-2xl border-2 border-[#b8a24f] bg-white p-5">
+                  <Award className="mb-3 text-[#b8a24f]" size={24} />
+                  <h3 className="mb-1.5 text-sm font-bold text-[#2e3d3b]">{title}</h3>
+                  <p className="text-xs text-[#7d8c8a]">{desc}</p>
+                </div>
+              ))}
             </div>
+          </section>
 
-            {/* Client-Centric Approach */}
-            <div className="rounded-2xl border border-neutral-200 p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-amber-600" size={24} />
-              </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3">Client-Centric Approach</h3>
-              <p className="text-neutral-700 leading-relaxed">
-                We have built a reputable business with a client central approach, serving well-known organizations across the globe. Our brass metal products are used by numerous respected companies.
-              </p>
+          {/* Quality Processes */}
+          <section className="mb-10 rounded-2xl border border-[#e6d9bf]/40 bg-white p-6">
+            <h2 className="mb-5 text-xl font-bold text-[#2e3d3b]">Quality Processes</h2>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+              {[
+                ['Lab Testing', 'Modern equipment including profile projectors and surface testers for comprehensive quality checks.'],
+                ['Staff Training', 'Regular training programmes to keep our team updated and ensure highest quality standards.'],
+                ['Final Inspection', 'Dedicated inspection department with experienced technical personnel achieving zero defect goals.'],
+              ].map(([title, desc]) => (
+                <div key={title}>
+                  <h3 className="mb-1.5 text-sm font-bold text-[#2e3d3b]">{title}</h3>
+                  <p className="text-xs leading-relaxed text-[#b8a24f]">{desc}</p>
+                </div>
+              ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Products & Services */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-8">Major Business Areas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white border-2 border-amber-600 rounded-2xl p-8">
-              <Award className="text-amber-600 mb-3" size={32} />
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Brass Battery Terminals</h3>
-              <p className="text-neutral-600">Custom designed, corrosion-free battery terminals in various sizes and configurations.</p>
-            </div>
-            <div className="bg-white border-2 border-amber-600 rounded-2xl p-8">
-              <Award className="text-amber-600 mb-3" size={32} />
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Brass Auto Parts</h3>
-              <p className="text-neutral-600">Precision engineered automotive components for OEM and aftermarket applications.</p>
-            </div>
-            <div className="bg-white border-2 border-amber-600 rounded-2xl p-8">
-              <Award className="text-amber-600 mb-3" size={32} />
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">Cable Lugs</h3>
-              <p className="text-neutral-600">Brass and copper cable lugs for electrical and automotive applications.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Quality Processes */}
-        <section className="mb-20 bg-neutral-50 rounded-2xl p-12 border border-neutral-200">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-8">Quality Processes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-bold text-neutral-900 mb-3">Lab Testing</h3>
-              <p className="text-neutral-700">Modern equipment including profile projectors and surface testers for comprehensive quality checks.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-neutral-900 mb-3">Staff Training</h3>
-              <p className="text-neutral-700">Regular training programs to keep our team updated and ensure highest quality standards.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-neutral-900 mb-3">Final Inspection</h3>
-              <p className="text-neutral-700">Dedicated inspection department with experienced technical personnel achieving zero defect goals.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="text-center">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-4">Get in Touch With Us</h2>
-          <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
-            Ready to discuss your brass component requirements? Contact our team directly.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* CTA */}
+          <section className="rounded-2xl bg-[#2e3d3b] p-8 text-center">
+            <h2 className="mb-2 text-xl font-bold text-white">Get in Touch With Us</h2>
+            <p className="mb-6 text-sm text-[#7d8c8a]">
+              Ready to discuss your brass component requirements? Contact our team directly.
+            </p>
             <Link
               href="/products"
-              className="inline-block rounded-full border-2 border-amber-600 px-8 py-3 font-semibold text-amber-700 transition-colors hover:bg-amber-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#b8a24f] px-6 py-3 text-sm font-semibold text-[#e6d9bf] transition-colors hover:bg-[#b8a24f] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e6d9bf]"
             >
               View All Products
             </Link>
-          </div>
-        </section>
+          </section>
+
         </div>
       </main>
       <Footer />

@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface NavLink {
   label: string;
   href: string;
@@ -26,7 +28,6 @@ export interface Product {
   tags: string[];
   specs: string[];
   isFeatured: boolean;
-  viewDetailsHref: string;
 }
 
 export interface Industry {
@@ -49,11 +50,11 @@ export interface FooterLinkColumn {
 }
 
 export interface FooterData {
+  businessHours: ReactNode;
   companyName: string;
   tagline: string;
   address: string;
   phone: string;
   email: string;
   linkColumns: FooterLinkColumn[];
-  businessHours: string;
 }
