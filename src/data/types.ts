@@ -28,6 +28,7 @@ export interface Product {
   tags: string[];
   specs: string[];
   isFeatured: boolean;
+  viewDetailsHref?: string;
 }
 
 export interface Industry {

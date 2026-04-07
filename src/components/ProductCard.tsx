@@ -54,7 +54,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </ul>
 
         <a
-          href={product.viewDetailsHref}
+          href={product.viewDetailsHref || '/#contact'}
           className="mt-auto flex items-center gap-1 text-xs font-semibold text-[#b8a24f] hover:text-[#2e3d3b] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b8a24f] rounded"
         >
           View Details <ArrowRight size={13} aria-hidden="true" />
