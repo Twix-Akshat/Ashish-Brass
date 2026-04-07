@@ -3,7 +3,7 @@ import { Product } from './types';
 export const productsData = {
   sectionTitle: 'Our Product Range',
   subtitle: 'Custom-designed brass components engineered for superior performance and reliability',
-  viewAllLink: { label: 'View All Products', href: '#contact' },
+  viewAllLink: { label: 'View All Products', href: 'products' },
   products: [
     // ── RI Series Battery Terminals ──
     {
